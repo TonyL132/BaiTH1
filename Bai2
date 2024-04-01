@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+
+int isChinhPhuong(int num) {
+    int sqrtNum = sqrt(num);
+    return sqrtNum * sqrtNum == num;
+}
+
+int demSoChinhPhuong(int n) {
+    int count = 0;
+    for (int i = 1; i < n; i++) {
+        if (isChinhPhuong(i)) {
+            count++;
+            printf("%d\n", i);
+        }
+    }
+    return count;
+}
+
+int main() {
+    int n;
+    printf("Nhap so nguyen duong n: ");
+    scanf("%d", &n);
+    printf("Cac so chinh phuong nho hon %d:\n", n);
+    int soLuong = demSoChinhPhuong(n);
+    printf("Tong cong co %d so chinh phuong nho hon %d.\n", soLuong, n);
+    return 0;
+}
